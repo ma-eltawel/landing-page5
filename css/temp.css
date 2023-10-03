@@ -1,0 +1,248 @@
+/* start global */
+*{
+    margin:0;
+    padding: 0;
+    color: white;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    font-weight: 600;
+    background-color: black;
+}
+/* end global */
+/* start header */
+header{
+    position: fixed;
+    z-index: 4;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 30px 8%;
+    background-color: transparent;
+}
+header .logo{
+    font-size: 28px;
+    cursor: default;
+    opacity: 0;
+    animation: right 1s ease forwards;
+}
+header nav a{
+    display: inline-block;
+    font-size: 18px;
+    margin: 0 20px;
+    transition: 0.4s;
+    opacity: 0;
+    animation: top 0.6s ease forwards;
+    animation-delay: calc(0.2s * var(--i));
+}
+header nav a:hover, .active{
+    color: #ff2222;
+}
+header .social{
+    width: 140px;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+}
+header .social a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: 2px solid transparent;
+    transform: rotate(45deg);
+    transition: 0.4s;
+    opacity: 0;
+    animation: soc 0.6s ease forwards;
+    animation-delay: calc(0.2s * var(--i));
+}
+header .social a:hover{
+    border-color: white;
+}
+header .social i{
+    font-size: 24px;
+    transform: rotate(-45deg);
+}
+/* end header */
+/* start home */
+.home{
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    width: 100%;
+    padding: 50px 8% 0;
+}
+.home .content{
+    max-width: 550px;
+}
+.home .content h1{
+    font-size: 48px;
+    line-height: 1.6;
+    opacity: 0;
+    animation: bottom 1s ease forwards;
+    animation-delay: 1s;
+}
+.home .content h3{
+    font-size:36px;
+    color: red;
+    opacity: 0;
+    animation: right 1s ease forwards;
+    animation-delay: 1.4s;
+}
+.home .content p{
+    font-weight: normal;
+    font-size: 18px;
+    margin: 15px 0 40px;
+    opacity: 0;
+    animation: left 1s ease forwards;
+    animation-delay: 1.6s;
+}
+.home .but{
+    padding: 10px 28px;
+    display: inline-block;
+    background-color: #ff2222;
+    border: 2px solid #ff2222;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgb(0, 0, 0, 0.2);
+    letter-spacing: 1px;
+    transition: 0.4s;
+    opacity: 0;
+    animation: top 1s ease forwards;
+    animation-delay: 1.8s;
+}
+.home .but:hover{
+    color: #ff4444;
+    background-color: transparent;
+}
+.home .image{
+    position: relative;
+    width: 420px;
+    height: 420px;
+    transform: rotate(45deg);
+    right: -8%;
+}
+.home .huh{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 24px solid darkred;
+    background-color: white;
+    box-shadow: -15px 15px 15px rgb(0, 0, 0, 0.4);
+    opacity: 0;
+    animation: zoom-out 1s ease forwards;
+    animation-delay: 1.6s;
+}
+.home .huh img{
+    position: absolute;
+    max-width: 660px;
+    transform: rotate(-45deg);
+    top: 140px;
+    left: -200px;
+    opacity: 0;
+    animation: car 1s ease forwards;
+    animation-delay: 2s;
+}
+.home .huh2{
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    background-color: darkred;
+    transform: rotate(45deg);
+    top: -20%;
+    right: -24%;
+    z-index: -1;
+    opacity: 0;
+    animation: huh 1s ease forwards;
+}
+/* end home */
+/* start animation */
+@keyframes right {
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes left {
+    0%{
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes top {
+    0%{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes bottom {
+    0%{
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes soc {
+    0%{
+        transform: translateX(100px) rotate(-45deg);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0) rotate(45deg);
+        opacity: 1;
+    }
+}
+@keyframes zoom-out {
+    0%{
+        transform: scale(1.2);
+        opacity: 0;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+@keyframes car {
+    0%{
+        transform: translate(300px, -300px) scale(0) rotate(-45deg);
+        opacity: 0;
+    }
+    100%{
+        transform: translate(0, 0) scale(1) rotate(-45deg);
+        opacity: 1;
+    }
+}
+@keyframes huh {
+    0%{
+        right: -40%;
+        opacity: 0;
+    }
+    100%{
+        right: -25%;
+        opacity: 1;
+    }
+}
+/* end animation */
